@@ -1,2 +1,6 @@
 build
 *.user
+bin
+bin-int
+*.vcxproj
+*.vcxproj.filters
