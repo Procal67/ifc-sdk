@@ -5,8 +5,8 @@ project "Step"
 	staticruntime "off"
     targetname "Step"
 
-	targetdir ("bin/" .. outputdir)
-	objdir ("bin-int/" .. outputdir)
+	targetdir "../../bin/%{cfg.buildcfg}"
+    objdir "../../bin-int/%{cfg.buildcfg}/%{prj.name}"
 
     files { 
 		"include/Step/**.h", 
@@ -19,8 +19,6 @@ project "Step"
     }
 
     defines {
-        "_ALLOW_RTCc_IN_STL",
-        "_CRT_STDIO_ISO_WIDE_SPECIFIERS=1",
         "WIN32",
         "_WINDOWS",
         "MSVC_IDE"
@@ -52,8 +50,8 @@ project "ifc2x3"
     staticruntime "off"
     targetname "ifc2x3"
 
-    targetdir ("bin/" .. outputdir)
-    objdir ("bin-int/" .. outputdir)
+	targetdir "../../bin/%{cfg.buildcfg}"
+    objdir "../../bin-int/%{cfg.buildcfg}/%{prj.name}"
     
 	pchheader "precompiled.h"
 	pchsource "src/ifc2x3/ifc2x3_pch.cxx"
@@ -70,8 +68,6 @@ project "ifc2x3"
     }
 
     defines {
-        "_ALLOW_RTCc_IN_STL",
-        "_CRT_STDIO_ISO_WIDE_SPECIFIERS=1",
         "WIN32",
         "_WINDOWS",
         "MSVC_IDE",
